@@ -7,7 +7,7 @@ public class Character
 
     public Character() //default constructor
     {
-        name = "Not assigned";
+        Reset();
     }
 
     public Character(string name)
@@ -20,6 +20,12 @@ public class Character
     public void PrintStatsInfo()
     {
         Console.WriteLine("Hero: " + this.name + " - " + this.exp + " EXP");
+    }
+
+    private void Reset()
+    {
+        this.name = "Not assigned";
+        this.exp = 0;
     }
 }
 
