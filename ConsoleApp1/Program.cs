@@ -83,8 +83,10 @@ class Program
         Paladin knight = new Paladin("Sir Arthur", huntingBow);
         knight.PrintStatsInfo();
 
-        //Testing external class adventurer
+        //testing external classes
         Adventurer mike = new Adventurer("Mike");
         mike.PrintStatsInfo();
+        Dude dave = new Dude("Dave");
+        dave.PrintStatsInfo();
     }
 }

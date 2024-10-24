@@ -1,16 +1,16 @@
 using System;
 
-public class Adventurer
+public class Dude
 {
     public string name;
     public int exp;
 
-    public Adventurer() //default constructor
+    public Dude() //default constructor
     {
         Reset();
     }
 
-    public Adventurer(string name)
+    public Dude(string name)
     {
         this.name = name;
     }
@@ -19,7 +19,7 @@ public class Adventurer
 
     public virtual void PrintStatsInfo() //virtual allows polymorphism to occur
     {
-        Console.WriteLine("Adventurer: " + this.name + " - " + this.exp + " EXP");
+        Console.WriteLine("Dude: " + this.name + " - " + this.exp + " EXP");
     }
 
     private void Reset()
