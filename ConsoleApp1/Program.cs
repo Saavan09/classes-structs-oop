@@ -17,7 +17,7 @@ public class Character
 
     //methods
 
-    public void PrintStatsInfo()
+    public virtual void PrintStatsInfo() //virtual allows polymorphism to occur
     {
         Console.WriteLine("Hero: " + this.name + " - " + this.exp + " EXP");
     }
@@ -29,6 +29,26 @@ public class Character
     }
 }
 
+public class Paladin: Character
+{
+    public Weapon weapon;
+    public Paladin(string name): base(name)
+    {
+
+    }
+
+    public Paladin(string name, Weapon weapon): base(name)
+    {
+        this.weapon = weapon;
+    }
+
+    //methods
+
+    public override void PrintStatsInfo() //overrides character's print stats method
+    {
+        Console.WriteLine("Hail " + this.name + " - take up your " + this.weapon.name + "!");
+    }
+}
 public struct Weapon
 {
     public string name;
@@ -58,5 +78,13 @@ class Program
 
         Weapon huntingBow = new Weapon("Hunting Bow", 105);
         huntingBow.PrintWeaponStats();
+
+        //inheritance
+        Paladin knight = new Paladin("Sir Arthur", huntingBow);
+        knight.PrintStatsInfo();
+
+        //Testing external class adventurer
+        Adventurer mike = new Adventurer("Mike");
+        mike.PrintStatsInfo();
     }
 }
